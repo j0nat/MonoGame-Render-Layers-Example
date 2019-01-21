@@ -1,4 +1,4 @@
-# # MonoGame Render Layers Example
+# MonoGame Render Layers Example
 
 ![Preview1](./Media/preview.gif)
 

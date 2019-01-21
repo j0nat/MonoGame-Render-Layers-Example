@@ -27,8 +27,8 @@ namespace GraphicLayersShowcase
             lightPosition = new Vector2(700, 500);
             lightStartPosition = new Vector2(lightPosition.X, lightPosition.Y);
             lightColor = new Vector4(255, 255, 255, 70);
-            lightIntensity = 0.1f;
-            lightRadius = 4f;
+            lightIntensity = 0.3f;
+            lightRadius = 5f;
             lightAngle = 0;
         }
 
@@ -60,8 +60,8 @@ namespace GraphicLayersShowcase
             // Clear levelTarget
             graphicsDevice.Clear(Color.Transparent);
 
-            // Draw the bear to the render target
-            spriteBatch.Begin();
+            // Draw the bear to the render target with light effect
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.LinearWrap, null, null, effect);
             spriteBatch.Draw(levelTexture, new Rectangle((int)levelPosition.X, (int)levelPosition.Y, levelTexture.Width, levelTexture.Height), Color.White);
             spriteBatch.End();
 
@@ -88,11 +88,6 @@ namespace GraphicLayersShowcase
         public RenderTarget2D GetRenderTarget()
         {
             return levelTarget;
-        }
-
-        public Effect GetEffect()
-        {
-            return effect;
         }
     }
 }

@@ -68,8 +68,8 @@ namespace GraphicLayersShowcase
                 Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0);
             spriteBatch.End();
 
-            // Draw the RenderTarget2D GetRenderTarget() to screen with the light effect GetEffect() and using DepthStencilState depthStencil2
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.LinearWrap, depthStencil2, null, levelRenderer.GetEffect());
+            // Draw the RenderTarget2D GetRenderTarget() using DepthStencilState depthStencil2
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.LinearWrap, depthStencil2, null, null);
             spriteBatch.Draw(levelRenderer.GetRenderTarget(), Vector2.Zero, Color.White);
             spriteBatch.End();
 
